@@ -1,10 +1,10 @@
 require 'formula'
 
 class Cgminer < Formula
-  homepage 'https://github.com/ckolivas/cgminer'
-  head 'https://github.com/ckolivas/cgminer.git', :branch => 'master'
-  url 'https://github.com/ckolivas/cgminer/archive/v4.9.1.tar.gz'
-  sha256 '01e61a98c7387f3fc67c1ee2e65c1f3b8350390b54eefac06f1ad8888d9cda50'
+  homepage 'https://github.com/vthoang/cgminer'
+  head 'https://github.com/vthoang/cgminer.git', :branch => 'master'
+  url 'https://github.com/amiryal/cpuminer/archive/gekko-v4.10.0.tar.gz'
+  sha256 'a7cdd033b2fc448feb74499f7f177406a3c85544c3dac1a47e89ae227842203a'
 
   depends_on 'autoconf' => :build
   depends_on 'automake' => :build
@@ -12,13 +12,13 @@ class Cgminer < Formula
   depends_on 'pkg-config' => :build
   depends_on 'coreutils' => :build
   depends_on 'curl'
+  depends_on 'libusb'
 
   def install
-    inreplace "autogen.sh", "libtoolize", "glibtoolize"
-    system "autoreconf -fvi"
     system "./autogen.sh", "--disable-debug", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "PKG_CONFIG_PATH=#{HOMEBREW_PREFIX}/opt/curl/lib/pkgconfig:#{HOMEBREW_PREFIX}/opt/jansson/lib/pkgconfig:#{HOMEBREW_PREFIX}/opt/libusb/lib/pkgconfig",
+                          "--enable-gekko",
                           "--enable-bflsc",
                           "--enable-bitforce",
                           "--enable-icarus",

@@ -17,16 +17,16 @@ Installation
 
 3. Tap this Homebrew repostory so that you can install packages from it:
 
-        brew tap nwoolls/xgminer
-        
+        brew tap amiryal/xgminer
+
 4. Finally, install either cgminer or bfgminer:
 
-        brew install bfgminer
-        
+        brew install cgminer
+
 If you'd like to install the miner using the latest source from Github rather than the latest official package, use the --HEAD parameter:
 
-        brew install bfgminer --HEAD
-        
+        brew install cgminer --HEAD
+
 Usage
 -----
 For more details on installing and using these crypto-coin miners under OS X, see this [article][1].
